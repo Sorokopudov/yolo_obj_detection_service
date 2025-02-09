@@ -33,7 +33,7 @@ app = FastAPI()
 
 # Модель данных для API
 class ImageRequest(BaseModel):
-    image_base64: str  # Base64-строка изображения
+        image_base64: str  # Base64-строка изображения
 
 
 @app.get("/", response_class=HTMLResponse)
