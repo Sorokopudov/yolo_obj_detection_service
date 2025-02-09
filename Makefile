@@ -26,9 +26,10 @@ run-gpu:
 		-e MODEL_PATH=$(MODEL_PATH) \
 		yolo-app
 
-# Остановка контейнера yolo-container
+# Остановка и удаление контейнера (если он существует)
 stop:
-	docker stop yolo-container || true
+	docker stop $(CONTAINER_NAME) || true
+	docker rm $(CONTAINER_NAME) || true
 
 # Удаление контейнера yolo-container
 clean:
